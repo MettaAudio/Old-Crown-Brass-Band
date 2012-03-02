@@ -1,0 +1,12 @@
+<%= simple_form_for(@event, :html => {:class => 'form-horizontal' }) do |f| %>
+  <%= f.input :attire %>
+  <%= f.input :date %>
+  <%= f.input :call_time %>
+  <%= f.input :location %>
+  <%= f.input :street_1 %>
+  <%= f.input :street_2 %>
+  <%= f.input :city %>
+  <%= f.input :state %>
+  <%= f.input :zipcode %>
+  <%= f.button :submit %>
+<% end -%>

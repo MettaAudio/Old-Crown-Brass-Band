@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  attire: MyString
+  date: 2012-03-02 10:32:00
+  call_time: 2012-03-02 10:32:00
+  location: MyString
+  street_1: MyString
+  street_2: MyString
+  city: MyString
+  state: MyString
+  zipcode: 1
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  attire: MyString
+  date: 2012-03-02 10:32:00
+  call_time: 2012-03-02 10:32:00
+  location: MyString
+  street_1: MyString
+  street_2: MyString
+  city: MyString
+  state: MyString
+  zipcode: 1
+  latitude: 1.5
+  longitude: 1.5
