@@ -16,6 +16,9 @@ gem 'simple_form'
 gem 'heroku'
 gem 'geocoder'
 
+group :production do
+  gem 'pg'
+end
 
 group :development do
   gem 'sqlite3'
