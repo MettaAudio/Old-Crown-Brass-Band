@@ -15,3 +15,32 @@
 //
 // Example:
 // @linkColor: #ff0000;
+//Custom Mixins
+@brown: rgb(135,116,93);
+
+// Mixin Overrides
+@navbarBackground: @brown;
+@navbarBackgroundHighlight: @brown;
+@navbarText:	@grayLighter;
+@navbarLinkColor:	@grayLighter;
+@navbarLinkColorHover: @white;
+@linkColor: rgb(236,103,77);
+
+//Custom CSS
+
+.top_border {
+  background-color: @brown;
+  height: 8px;
+}
+
+.logo {
+  margin-top: -8px;
+}
+
+.tagline {
+  margin-top:150px;
+}
+
+.navbar .container {
+  width: 100%;
+}
