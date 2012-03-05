@@ -16,31 +16,31 @@
 // Example:
 // @linkColor: #ff0000;
 //Custom Mixins
-@brown: rgb(135,116,93);
+@darkbrown: rgb(89,64,50);
+@lightbrown: rgb(170,135,103);
 
 // Mixin Overrides
-@navbarBackground: @brown;
-@navbarBackgroundHighlight: @brown;
+@navbarBackground: @darkbrown;
+@navbarBackgroundHighlight: @lightbrown;
 @navbarText:	@grayLighter;
 @navbarLinkColor:	@grayLighter;
 @navbarLinkColorHover: @white;
 @linkColor: rgb(236,103,77);
 
 //Custom CSS
-
-.top_border {
-  background-color: @brown;
-  height: 8px;
-}
-
 .logo {
-  margin-top: -8px;
+  margin-top: -18px;
 }
 
-.tagline {
-  margin-top:150px;
-}
-
-.navbar .container {
-  width: 100%;
+.banner_image {
+  display: block;
+  padding: 4px;
+  line-height: 1;
+  border: 2px solid @lightbrown;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
 }

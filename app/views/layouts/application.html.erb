@@ -11,50 +11,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="span12 top_border"></div>
-    </div>
-    <div class="row top_header">
-      <div class="span3 logo">
-        <%= link_to image_tag('banner-logo.png'), root_path %>
-      </div>
-      <div class="row">
-        <div class="span9 tagline">
-          <h1>Old Crown Brass Band <small>Making Music Together</small></h1>
-        </div>
-        <div class="span9">
-          <div class="navbar">
-            <div class="navbar-inner">
-              <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </a>
-                <div class="nav-collapse">
-                  <ul class="nav">
-                    <li><%= link_to "Upcomming Events", events_path %></li>
-                    <li><%= link_to "About The Band", about_path %></li>
-                    <li><%= link_to "Members" %></li>
-                    <li><%= link_to "Donate" %></li>
-                  </ul>
-                </div>
-              </div>
+  <div class="background">
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <%= link_to 'Old Crown Brass Band', root_path, :class => 'brand', :style => 'padding-left:33px;' %>
+            <div class="nav-collapse">
+              <ul class="nav">
+                <li><%= link_to "Upcomming Events", events_path %></li>
+                <li><%= link_to "About The Band", about_path %></li>
+                <li><%= link_to "Members" %></li>
+                <li><%= link_to "Donate" %></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="span3">
-        <h3>Old Crown Brass Band</h3><p>The band is a non-profit organization. Please make a donation.</p>
-        <%= link_to 'Donate', root_path, :class => :btn %>
+      <div class="row top_header">
+        <div class="span3 logo">
+          <%= link_to image_tag('banner-logo.png'), root_path %>
+        </div>
+        <div class="row">
+          <div class="span9">
+            <%= image_tag 'full_band.jpg', :class => 'banner_image' %>
+          </div>
+          <div class="span9">
+          </div>
+        </div>
       </div>
-      <div class="span9">
-        <%= yield %>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+          <h4>Old Crown Brass Band</h4><p>The band is a non-profit organization. Please make a donation.</p>
+          <%= link_to 'Donate', root_path, :class => :btn %>
+          <hr />
+          <p>We are a traditional British brass band (mostly!). We are currently playing 5-7 concerts a year (unless you invite us to your place too!). Playing everything from the Beatles to Bach and having fun doing it!</p>
+        </div>
+        <div class="span9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class="row">
+        <div class="span4">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div class="span4">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div class="span4">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
       </div>
     </div>
   </div>
