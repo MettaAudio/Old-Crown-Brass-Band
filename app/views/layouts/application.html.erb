@@ -37,28 +37,21 @@
         <div class="span3 logo">
           <%= link_to image_tag('banner-logo.png'), root_path %>
         </div>
-        <div class="row">
-          <div class="span9">
-            <%= image_tag 'full_band.jpg', :class => 'banner_image' %>
-          </div>
-          <div class="span9">
+        <div class='span3 offset6'>
+          <div class='well'>
+            <p>
+              The Old Crown Brass Band is a not for profit organization, and a member of Arts United. All donations are welcome!
+            </p>
+            <a href="#" class='btn'>Donate</a>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="span3">
-          <h4>Old Crown Brass Band</h4><p>The band is a non-profit organization. Please make a donation.</p>
-          <%= link_to 'Donate', root_path, :class => :btn %>
-          <hr />
-          <p>We are a traditional British brass band (mostly!). We are currently playing 5-7 concerts a year (unless you invite us to your place too!). Playing everything from the Beatles to Bach and having fun doing it!</p>
-        </div>
-        <div class="span9">
-          <%= yield %>
-        </div>
-      </div>
+      <%= yield %>
     </div>
+  </div>
+  <div class='footer'>
     <div class='container'>
       <div class="row">
         <div class="span4">
