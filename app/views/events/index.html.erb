@@ -1,26 +1,32 @@
-<h1>Upcoming Concerts</h1>
+<div class='row'>
+  <div class='span12'>
+    <div class='well'>
+      <h1>Upcoming Concerts</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Location</th>
-      <th>Address</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.date.strftime("%A, %B %d, %Y at %H:%m %p") %></td>
-        <td><%= event.location %></td>
-        <td><%= event.street_1 %></td>
-        <td><%= link_to 'More Info', event, :class => 'btn btn-mini'%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Address</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @events.each do |event| %>
+            <tr>
+              <td><%= event.date.strftime("%A, %B %d, %Y at %H:%m %p") %></td>
+              <td><%= event.location %></td>
+              <td><%= event.street_1 %></td>
+              <td><%= link_to 'More Info', event, :class => 'btn btn-mini'%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<br />
+      <br />
 
-<%= link_to 'New Event', new_event_path %>
+      <%= link_to 'New Event', new_event_path %>
+    </div>
+  </div>
+</div>
