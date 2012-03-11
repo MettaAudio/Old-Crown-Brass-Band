@@ -1,20 +1,33 @@
 <div class='row'>
-  <div class='span10 offset1 well'>
+  <div class='span6'>
     <h1>Next Concert <small>Come see us play!</small></h1>
-    <%= image_tag 'full_band.jpg', :class => 'center' %>
+    <div class='well'>
+      <div class="row">
+        <div class="span2">
+          <%= image_tag 'concert_image.jpg', :style => 'padding-right:10px;', :class => 'thumbnail' %>
+        </div>
+        <div class="span3">
+          <h3>Title of Concert</h3>
+          <p>Location, at Time</p>
+          <p><em>This concert is free an open to the public</em></p>
+          <%= link_to 'Concert Details', '#', :class => 'btn' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="span3">
+    <h1>About</h1>
+    <div class="well">
+      <p>We are an all volunteer traditional British brass band based in Fort Wayne, Indiana. Our group is made up of everything from professional players to very talented and dedicated amateurs...</p>
+      <%= link_to 'Learn More', '#', :class => 'btn' %>
+    </div>
+  </div>
+  <div class='span3'>
+    <h1>Support</h1>
+    <div class='well'>
+      <p>Old Crown Brass Band is a volunteer organization that relies heavily on the support of our members and you, our community. We're also a member of Arts United and a nonprofit organization. Your tax deductible donation is greatly appreciated.</p>
+      <%= link_to 'Donate!', '#', :class => 'btn' %>
+    </div>
   </div>
 </div>
 
-<div class='row'>
-  <div class='span4'>
-    <div class='well'>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-  </div>
-  <div class='span4'>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </div>
-  <div class='span4'>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </div>
-</div>

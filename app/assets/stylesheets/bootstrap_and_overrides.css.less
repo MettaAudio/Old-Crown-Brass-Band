@@ -14,14 +14,12 @@
 // See http://twitter.github.com/bootstrap/less.html for their names and documentation
 //
 //Custom Mixins
-  @darkbrown: rgb(89,64,50);
+  @darkbrown: rgb(95,70,45);
   @lightbrown: rgb(170,135,103);
   @olive: rgb(68,63,45);
   @oliveDark: darken(@olive, 10%);
 
 // Mixin Overrides
-  @navbarBackground: @oliveDark;
-  @navbarBackgroundHighlight: @olive;
   @navbarText:	@grayLighter;
   @navbarLinkColor:	@grayLighter;
   @navbarLinkColorHover: @white;
@@ -29,40 +27,28 @@
 
 //Custom CSS
 
-.banner_image {
-  display: block;
-  padding: 4px;
-  line-height: 1;
-  border: 2px solid @olive;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-
 .background {
-  background-image: url(bkgnd.jpg);
-  background-repeat: repeat-x;
+  background-image: url('bkgnd.jpg');
 }
 
-.box {
-  background-color: white;
-  .border-radius(5px);
-}
-
-.center {
-  display: block;
-  margin-left:auto;
-  margin-right:auto;
+.well {
+  background-color: #f5f3ec;
 }
 
 .footer {
-  background-color: @oliveDark;
   margin-top: 25px;
   padding-top: 25px;
   margin-bottom: 25px;
   padding-bottom: 25px;
   color: white;
+}
+
+.tts {
+  text-align: center;
+  font-size: 9px;
+  color: #AAA;
+ }
+
+.clear {
+  clear: both;
 }
