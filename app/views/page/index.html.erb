@@ -8,7 +8,8 @@
         </div>
         <div class="span3">
           <h3>Title of Concert</h3>
-          <p>Location, at Time</p>
+          <p>Location</p>
+          <p><%= format_datetime(@next_event.date) %></p>
           <p><em>This concert is free an open to the public</em></p>
           <%= link_to 'Concert Details', '#', :class => 'btn' %>
         </div>
