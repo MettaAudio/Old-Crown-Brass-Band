@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120323134846) do
+ActiveRecord::Schema.define(:version => 20120323175456) do
 
   create_table "events", :force => true do |t|
     t.string   "attire"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20120323134846) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "admission_fee"
+    t.integer  "admission_fee",   :default => 0
     t.string   "fee_description"
     t.string   "title"
     t.text     "description"
