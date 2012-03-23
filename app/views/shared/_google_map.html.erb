@@ -1,0 +1,60 @@
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+
+<script type="text/javascript"> 
+  function initialize() {
+
+    // Create the map 
+    // No need to specify zoom and center as we fit the map further down.
+    var map = new google.maps.Map(document.getElementById("map_canvas"), {
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    // Create the shared infowindow with two DIV placeholders
+    // One for a text string, the other for the StreetView panorama.
+    var content = document.createElement("DIV");
+    var infowindow = new google.maps.InfoWindow({
+   content: content
+    });
+  
+    // Define the list of markers.
+    // This could be generated server-side with a script creating the array.
+    var markers = [
+    <%= parish_map_data(@mapable) %>
+    ];
+  
+    // for a custom icon, uncomment this out and point to new icon.
+    // Also uncomment below "icon: image"
+    // var image = 'http://cdn1.iconfinder.com/data/icons/mapicons/icons/gun.png';
+
+    // Create the markers
+    for (index in markers) addMarker(markers[index]);
+    function addMarker(data) {
+   var marker = new google.maps.Marker({
+  position: new google.maps.LatLng(data.lat, data.lng),
+  // icon: image, // Custom icon
+  map: map,
+        title: data.parish_info
+   });
+   google.maps.event.addListener(marker, "click", function() {
+  openInfoWindow(marker);
+   });
+    }
+
+    // Zoom and center the map to fit the markers
+    // This logic could be conbined with the marker creation.
+    // Just keeping it separate for code clarity.
+    var bounds = new google.maps.LatLngBounds();
+    for (index in markers) {
+   var data = markers[index];
+   bounds.extend(new google.maps.LatLng(data.lat, data.lng));
+ }
+ map.fitBounds(bounds);
+
+
+    // Set the infowindow content and display it on marker click.
+    function openInfoWindow(marker) {
+   content.innerHTML = marker.getTitle();
+   infowindow.open(map, marker);
+    }
+  }
+</script>

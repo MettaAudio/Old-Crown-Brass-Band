@@ -31,10 +31,13 @@ body { background-color:@grayLighter;}
 .content {
   background-color: #fff;
   padding: 20px;
-  margin: 0 10px; /* negative indent the amount of the padding to maintain the grid system */
-  -webkit-border-radius: 0 0 6px 6px;
-     -moz-border-radius: 0 0 6px 6px;
-          border-radius: 0 0 6px 6px;
+  max-width: 1196px;
+  margin-top:25px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-border-radius: 6px 6px 6px 6px;
+     -moz-border-radius: 6px 6px 6px 6px;
+          border-radius: 6px 6px 6px 6px;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
           box-shadow: 0 1px 2px rgba(0,0,0,.15);
@@ -47,6 +50,23 @@ body { background-color:@grayLighter;}
   background-image: url('3.jpg');
 }
 
+.dl-horizontal dt {
+  float: left;
+  clear: left;
+  width: 75px;
+  text-align: right;
+}
+
+.dl-horizontal dd {
+  margin-left: 85px;
+}
+
+hr {
+  border-top: 1px solid @grayLight;
+  border-bottom: 1px solid @white;
+}
+
+
 .well {
   background-color: #f5f3ec;
 }
@@ -56,7 +76,6 @@ body { background-color:@grayLighter;}
   padding-top: 25px;
   margin-bottom: 25px;
   padding-bottom: 25px;
-  color: white;
 }
 
 .tts {

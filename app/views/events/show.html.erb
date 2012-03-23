@@ -1,66 +1,61 @@
+<% content_for :title do %><%= next_event ? " - Next concert is #{format_datetime(next_event.event_date)}" : "" %> <% end -%>
+<% content_for :head do -%>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+  <% if @event.latitude.present? && @event.longitude.present? %>
+    <script type="text/javascript">
+      function initialize() {
+        var latlng = new google.maps.LatLng(<%= "#{@event.latitude.to_s}" %>, <%= "#{@event.longitude.to_s}" %>);
+        var myOptions = {
+          zoom: 14,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+        var marker = new google.maps.Marker({
+              position: latlng,
+              map: map,
+              title:"<%= @event.location %>"});
+      }
+
+    </script>
+  <% end %>
+<% end -%>
 <div class='row'>
-  <div class='span12'>
+  <div class='span8'>
     <div class='well'>
-      <p id="notice"><%= notice %></p>
-
-      <p>
-        <b>attire:</b>
-        <%= @event.attire %>
-      </p>
-
-      <p>
-        <b>date:</b>
-        <%= @event.date %>
-      </p>
-
-      <p>
-        <b>call time:</b>
-        <%= @event.call_time %>
-      </p>
-
-      <p>
-        <b>location:</b>
-        <%= @event.location %>
-      </p>
-
-      <p>
-        <b>street 1:</b>
-        <%= @event.street_1 %>
-      </p>
-
-      <p>
-        <b>street 2:</b>
-        <%= @event.street_2 %>
-      </p>
-
-      <p>
-        <b>city:</b>
-        <%= @event.city %>
-      </p>
-
-      <p>
-        <b>state:</b>
-        <%= @event.state %>
-      </p>
-
-      <p>
-        <b>zipcode:</b>
-        <%= @event.zipcode %>
-      </p>
-
-      <p>
-        <b>latitude:</b>
-        <%= @event.latitude %>
-      </p>
-
-      <p>
-        <b>longitude:</b>
-        <%= @event.longitude %>
-      </p>
-
-
-      <%= link_to 'edit', edit_event_path(@event) %> |
-      <%= link_to 'Back', events_path %>
+      <h1><%= @event.title %></h1>
+      <h6><%= format_datetime(@event.event_date) %></h6>
+      <p><%= @event.description_with_breaks %></p>
+      <hr />
+      <h3>Concert Details <small>Everything you need to know!</small></h3>
+      <dl class='dl-horizontal'>
+        <dt>Date:</dt>
+        <dd><%= format_date(@event.event_date) %></dd>
+        <dt>Time:</dt>
+        <dd><%= format_time(@event.event_date) %></dd>
+        <dt>Price:</dt>
+        <dd><%= event_fee(@event.admission_fee) %></dd>
+        <% if @event.fee_description.present? %>
+          <dt></dt>
+          <dd><%= @event.fee_description %></dd>
+        <% end -%>
+        <dt>Location:</dt>
+        <dd>
+          <address>
+            <strong><%= @event.location %></strong><br />
+            <%= "#{@event.street_1} <br />".html_safe if @event.street_1 %>
+            <%= "#{@event.street_2} <br />".html_safe if @event.street_2 %>
+            <%= "#{@event.city}, #{@event.state}  #{@event.zipcode}".html_safe if @event.city %>
+          </address>
+        </dd>
+      </dl>
     </div>
   </div>
+  <% if @event.latitude && @event.longitude -%>
+    <div class='span4'>
+      <div id="map_canvas" style="height:250px;"></div>
+    </div>
+  <% end -%>
 </div>
