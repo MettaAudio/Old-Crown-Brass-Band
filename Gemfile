@@ -27,6 +27,7 @@ group :development do
   gem "what_methods"
   gem "awesome_print"
   gem "interactive_editor"
+  gem "taps"
 end
 
 # To use ActiveModel has_secure_password
