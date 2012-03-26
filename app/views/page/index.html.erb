@@ -1,26 +1,23 @@
 <div class='row'>
   <div class='span6'>
-    <h1>Next Concert <small>Come see us play!</small></h1>
+    <h1>Next Concert <small>Come enjoy a concert!</small></h1>
     <div class='well'>
-      <div class="row">
-        <div class="span2">
-          <%= image_tag 'concert_image.jpg', :style => 'padding-right:10px;', :class => 'thumbnail' %>
-        </div>
-        <div class="span3">
-          <h3><%= next_event ? next_event.title : 'No Concerts Scheduled' %></h3>
-          <p><%= next_event ? next_event.description : "We're sorry, but we don't have any upcoming concerts currently scheduled." %></p>
-          <p><%= next_event ? format_datetime(next_event.event_date) : "" %></p>
-          <p><em><%= next_event ? event_fee(next_event.admission_fee) : '' %></em></p>
-          <a href="<%= url_for next_event %>" class='btn'><i class="icon-info-sign"></i> Concert Details</a>
-        </div>
+      <div class="thumbnail" style='max-width:150px; float:left; margin-right: 20px;'>
+        <%= image_tag 'trumpet_players.jpg' %>
       </div>
+      <h3><%= next_event ? next_event.title : 'No Concerts Scheduled' %></h3>
+      <p><%= next_event ? next_event.description : "We're sorry, but we don't have any upcoming concerts currently scheduled." %></p>
+      <p><%= next_event ? format_datetime(next_event.event_date) : "" %></p>
+      <p><em><%= next_event ? event_fee(next_event.admission_fee) : '' %></em></p>
+      <a href="<%= url_for next_event %>" class='btn'><i class="icon-info-sign"></i> Concert Details</a>
+    <div style='clear:both;'></div>
     </div>
   </div>
   <div class="span3">
     <h1>About</h1>
     <div class="well">
-      <p>We are an all volunteer traditional British brass band based in Fort Wayne, Indiana. Our group is made up of everything from professional players to very talented and dedicated amateurs...</p>
-      <%= link_to 'Learn More', about_path, :class => 'btn' %>
+      <p>We are an all volunteer traditional British brass band based in Fort Wayne, Indiana. Our group is made up of everything from professional players to very talented and dedicated amateurs.</p>
+      <%= link_to 'Learn More', about_path, :class => 'btn ' %>
     </div>
   </div>
   <div class='span3'>

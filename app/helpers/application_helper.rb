@@ -17,7 +17,9 @@ module ApplicationHelper
   end
 
   def event_fee(admission_fee)
-    if admission_fee.present?
+    if admission_fee == 0
+      'This concert is free an open to the public.'
+    elsif admission_fee.present?
       number_to_currency(admission_fee)
     else
       'Free!'
