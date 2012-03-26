@@ -1,6 +1,9 @@
 OldCrownBrassBand::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # Add Active Admin assets to precompile for Heroku
+  config.assets.precompile += ['active_admin.js', 'active_admin.css']
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -19,9 +22,6 @@ OldCrownBrassBand::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
-
-  # Active Admin recommends this for Heroku deployment
-  config.assets.initialize_on_precompile = false
 
   # Define default url options for active admin
   config.action_mailer.default_url_options = { :host => 'http://oldcrownbrassband.org' }
