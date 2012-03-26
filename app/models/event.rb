@@ -12,7 +12,7 @@ class Event < ActiveRecord::Base
   def full_address
     address = ''
     address << street_1 if street_1
-    address << ", #{street_2}" if street_2
+    address << ", #{street_2}" if street_2.present?
     address << ", #{city}" if city
     address << ", #{state}" if state
     address << ", #{zipcode.to_s}" if zipcode

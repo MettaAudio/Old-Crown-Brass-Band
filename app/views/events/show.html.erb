@@ -45,8 +45,8 @@
         <dd>
           <address>
             <strong><%= @event.location %></strong><br />
-            <%= "#{@event.street_1} <br />".html_safe if @event.street_1 %>
-            <%= "#{@event.street_2} <br />".html_safe if @event.street_2 %>
+            <%= "#{@event.street_1} <br />".html_safe if @event.street_1.present? %>
+            <%= "#{@event.street_2} <br />".html_safe if @event.street_2.present? %>
             <%= "#{@event.city}, #{@event.state}  #{@event.zipcode}".html_safe if @event.city %>
           </address>
         </dd>

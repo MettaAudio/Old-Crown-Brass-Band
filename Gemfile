@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'heroku'
 gem 'geocoder'
+gem 'activeadmin'
 
 group :production do
   gem 'pg'
