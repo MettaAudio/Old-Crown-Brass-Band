@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
   after_validation :geocode
 
   def description_with_breaks
-    description.gsub(/\n/, '<br/><br/>').html_safe if description
+    description.gsub(/\n/, '<br/>').html_safe if description
   end
 
   def full_address
