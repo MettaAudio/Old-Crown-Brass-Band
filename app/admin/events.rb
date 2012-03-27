@@ -29,5 +29,6 @@ ActiveAdmin.register Event do
        f.input :admission_fee
        f.input :fee_description
      end
+     f.buttons
    end
 end
