@@ -1,13 +1,14 @@
 class Event < ActiveRecord::Base
-  scope :current, where("events.event_date >= ?", Time.now.at_midnight).order("events.event_date ASC")
+  scope :current, where("events.event_date >= ?", Time.now.at_midnight.in_time_zone("Eastern Time (US & Canada)")).order("events.event_date ASC")
 
   geocoded_by :full_address
 
   after_validation :geocode
 
   def self.event_today?
-    false
-    return true if current.first.event_date.month == Time.now.month && current.first.event_date.day == Time.now.day
+    current_month = Time.now.in_time_zone("Eastern Time (US & Canada)").month
+    current_day = Time.now.in_time_zone("Eastern Time (US & Canada)").day
+    return true if current.first.event_date.month == current_month && current.first.event_date.day == current_day
   end
 
   def description_with_breaks
