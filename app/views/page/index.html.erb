@@ -5,6 +5,7 @@
       <div class="thumbnail" style='max-width:150px; float:left; margin-right: 20px; margin-bottom: 20px;'>
         <%= image_tag 'trumpet_players.jpg' %>
       </div>
+      <% if Event.event_today? %><h3 class='red'>TODAY!</h3><% end %>
       <h6><%= next_event ? format_datetime(next_event.event_date) : "" %></h6>
       <h3><%= next_event ? next_event.title : 'No Concerts Scheduled' %></h3>
       <p><%= next_event ? next_event.description_with_breaks : "We're sorry, but we don't have any upcoming concerts currently scheduled." %></p>

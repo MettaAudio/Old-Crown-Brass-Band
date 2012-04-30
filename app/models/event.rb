@@ -1,9 +1,14 @@
 class Event < ActiveRecord::Base
-  scope :current, where("events.event_date >= ?", Time.now).order("events.event_date ASC")
+  scope :current, where("events.event_date >= ?", Time.now.at_midnight).order("events.event_date ASC")
 
   geocoded_by :full_address
 
   after_validation :geocode
+
+  def self.event_today?
+    false
+    return true if current.first.event_date.month == Time.now.month && current.first.event_date.day == Time.now.day
+  end
 
   def description_with_breaks
     description.gsub(/\n/, '<br/>').html_safe if description
