@@ -9,11 +9,10 @@ module ApplicationHelper
   end
 
   def format_time(datetime)
-    datetime.strftime("%l:%M %p")
-  end
+    time = datetime.strftime("%l:%M %p")
+    return 'TBA' if time == '12:00 AM'
 
-  def format_datetime(datetime)
-    datetime.strftime("%A, %B %d, %Y at %l:%M %p")
+    time
   end
 
   def event_fee(admission_fee)

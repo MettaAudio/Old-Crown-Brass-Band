@@ -6,7 +6,7 @@ OldCrownBrassBand::Application.routes.draw do
 
   match 'about' => "page#about", :as => :about
 
-  resources :events
+  resources :events, only: [:index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
